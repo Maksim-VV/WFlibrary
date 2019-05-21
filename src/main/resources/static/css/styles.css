@@ -1,0 +1,43 @@
+body {
+    padding: 50px;
+}
+
+table.books-list {
+    min-width: 540px;
+    font-size: 12pt;
+    border: 2px;
+    border-collapse: collapse;
+}
+
+thead {
+    color: CornflowerBlue;
+    vertical-align: top;
+    text-align: center;
+}
+
+.books-list > tbody {
+    border: 2px;
+    font-size: 12pt;
+    color: rgb(0, 0, 0);
+}
+
+thead > tr > td {
+    border: 2px solid black;
+}
+
+.books-list > thead > tr > td, .books-list > tbody > tr > td {
+    padding: 5px;
+    border: 1px solid maroon;
+    height: 25px;
+}
+
+.form-control-td {
+    width: 40%;
+}
+
+.form-control {
+    width: 270%;
+}
+
+
+

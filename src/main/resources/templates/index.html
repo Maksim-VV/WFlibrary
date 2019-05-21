@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all books</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<script src="js/books_list.js"></script>
+    <h2>Библиотека</h2>
+<br>
+
+
+<table class="books-list">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Жанр</th>
+    </tr>
+    </thead>
+
+    <tbody id="booksTableBody">
+
+    </tbody>
+</table>
+<br>
+<br>
+
+<table id="saveForm">
+    <tr>
+        <td class="form-control-td">ID</td>
+        <td><input type="text" class="form-control" id="bookId" readonly="readonly" placeholder="ID"></td>
+    </tr>
+    <tr>
+        <td>Название</td>
+        <td><input id="bookName" class="form-control" type="text" name="bookName"
+                   placeholder="Название книги"></td>
+    </tr>
+    <tr>
+        <td>Автор</td>
+        <td><input id="authorName" class="form-control" type="text" name="authorName"
+                   placeholder="Автор"></td>
+    </tr>
+    <tr>
+        <td>Жанр</td>
+        <td><input id="genreName" class="form-control" type="text" name="genreName"
+                   placeholder="Жанр"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Сохранить" id="btnAddBook"></td>
+    </tr>
+</table>
+
+</body>
+</html>
