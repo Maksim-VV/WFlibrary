@@ -1,26 +1,18 @@
 package com.vasiliska.WFlibrary.domain;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
-
-@Data
-@Entity(name = "Genre")
-@Table(name = "genres")
+@Getter
+@Setter
+@AllArgsConstructor
 public class Genre {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "genre_id")
-    private Long genreId;
+    private String name;
 
-    @Column(name = "genre_name")
-    private String genreName;
-
-    public Genre(String genreName) {
-        this.genreName = genreName;
-    }
-
-    public Genre() {
+    @Override
+    public String toString() {
+        return "жанр: " + name;
     }
 }
