@@ -22,13 +22,13 @@ public class DatabaseChangelog {
         BasicDBObject c1 = new BasicDBObject().append("text", "Очень крутая книжка, есть о чем подумать");
         BasicDBObject c2 = new BasicDBObject().append("text", "Плакал с первых страниц");
 
-        BasicDBObject book1 = new BasicDBObject().append("_id", "1")
+        BasicDBObject book1 = new BasicDBObject().append("_id", "111")
                 .append("name", "Преступление и наказание")
                 .append("author", author1)
                 .append("genre", genre1)
                 .append("comments", new BasicDBObject[]{c1});
 
-        BasicDBObject book2 = new BasicDBObject().append("_id", "2")
+        BasicDBObject book2 = new BasicDBObject().append("_id", "112")
                 .append("name", "Мастер и Маргарита")
                 .append("author", author2)
                 .append("genre", genre2)
