@@ -1,40 +1,18 @@
 package com.vasiliska.WFlibrary.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-
-import javax.persistence.*;
-
-
-@Data
-@Entity(name = "Comment")
-@Table(name = "comments")
+@Getter
+@Setter
+@AllArgsConstructor
 public class Comment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "comment_id")
-    private Long commentId;
-
-    @Column(name = "comment_text")
-    private String commentText;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "book_id")
-    private Book book;
-
-    public Comment(String commentText, Book book) {
-        this.commentText = commentText;
-        this.book = book;
-    }
-
-    public Comment() {
-    }
+    private String text;
 
     @Override
     public String toString() {
-        return book.getBookName() + ": " + commentText+"\n";
+        return text;
     }
-
-
 }

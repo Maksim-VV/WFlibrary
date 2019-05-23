@@ -1,42 +1,46 @@
 package com.vasiliska.WFlibrary.domain;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+import java.util.List;
 
-@Data
-@Entity(name = "Book")
-@Table(name = "books")
+@Document(collection = "books")
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
-    private Long bookId;
+    private String id;
 
-    @Column(name = "name")
-    private String bookName;
+    private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "author_id")
     private Author author;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "genre_id")
     private Genre genre;
 
-    public Book(String bookName, Author author, Genre genre) {
-        this.bookName = bookName;
-        this.author = author;
-        this.genre = genre;
+    private List<Comment> comments;
+
+    public Book(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Book() {
+    public Book(String name, Author author, Genre genre, List<Comment> comments) {
+        this.name = name;
+        this.author = author;
+        this.genre = genre;
+        this.comments = comments;
     }
 
     @Override
     public String toString() {
-        return bookName + " " + author.getAuthorName() + " " + genre.getGenreName()+"\n";
+        return "Книга: " + id + " " + name + " " + author + " " + genre + " " + "Коментарии: " + comments;
     }
-
 }

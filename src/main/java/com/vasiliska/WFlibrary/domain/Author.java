@@ -1,26 +1,19 @@
 package com.vasiliska.WFlibrary.domain;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
-
-@Data
-@Entity(name = "Author")
-@Table(name = "authors")
+@Getter
+@Setter
+@AllArgsConstructor
 public class Author {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "author_id")
-    private Long authorId;
+    private String lastName;
+    private String firstName;
 
-    @Column(name = "author_name")
-    private String authorName;
-
-    public Author() {
-           }
-    
-    public Author(String authorName) {
-        this.authorName = authorName;
-       }
+    @Override
+    public String toString() {
+        return "Автор: " + lastName + " " + firstName;
+    }
 }
